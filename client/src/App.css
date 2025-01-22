@@ -5,9 +5,26 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   color: #222;
+} */
+
+a {
+  cursor: pointer;
 }
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* 深色背景 */
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow-x: hidden;
+  }
 
 
 /* 导航栏样式 */
@@ -66,24 +83,35 @@ main .posts {
 div.post {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 0.9fr 1fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 30px;
+}
 
+div.post a {
+  text-decoration: none;
+  color: inherit;
 }
 
 div.post div.texts {
   text-align: left;
+  color: #ffffff;
 }
 
 div.post div.texts h2{
   margin: 0;
   font-size: 1.7rem;
+  color: white;
 
+}
+
+div.post div.texts p {
+  margin: 10px 0;
+  color: #ffffff;
 }
 
 div.post p.info {
   margin: 6px 0;
-  color: #888;
+  color: #eaeaea;
   font-size: .7rem;
   font-weight: bold;
   display: flex;
@@ -91,24 +119,95 @@ div.post p.info {
 }
 
 div.post p.info a.author {
-  color:#333;
+  color:#ffffff;
   font-weight: bolder;
 }
 
-div.post p.info p.summary {
-  margin: 10px 0;
-  line-height: 1.5rem;
+div.post-page {
+  max-width: 80%;
+  margin: 20px auto;
+  margin-top: 8%;
+  padding:40px;
+  padding-top: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.135);
+  display: flex;
+  flex-direction: column;
+}
+
+div.post-page div.image {
+  max-height: 300px;
+  margin-bottom: 40px;
+  display:flex;
+  overflow: hidden;
+}
+
+div.post-page div.image img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  align-self: center;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+div.post-page h1 {
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #000000;
+}
+
+div.post-page time {
+  align-self: center;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #3e3d3d;
+}
+
+div.post-page div.author {
+  display: block;
+  gap: 10px;
+  align-self: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+div.post-page p {
+  font-size: 1.2rem;
+  color: #000000;
+  line-height: 1.8rem;
+  padding-left: 20px;
+
+}
+
+div.post-page div.admin-controls {
+  display: flex;
+  flex-direction:row;
+  gap: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 20%;
+  height: auto;
+  align-self: center;
 }
 
 
+
+.posts .post .texts .summary {
+  margin: 10px 0;
+  line-height: 1.5rem;
+  color: #ffffff;
+}
 
 img {
   width: 100%;
 }
 
-div.post div.image {
-
-}
 
 form.login, form.register {
   max-width: 1000px;
@@ -153,6 +252,7 @@ button:hover {
   background-color: #00000085;
 }
 
+
 .logo {
   font-weight: bold;
   font-size: larger;
@@ -166,16 +266,19 @@ button:hover {
 .post {
   text-align: center;
   padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-left: 20%;
+  padding-right: 20%;
+  align-self: center;
 }
-
-
 
 .post p {
   font-size: 16px;
   color: #000000; 
   margin-top: 10px;
 }
-
 
 
 .sidebar {
@@ -447,6 +550,13 @@ button:hover {
 
 /* 响应式设计 */
 @media screen and (max-width: 800px) {
+  div.post {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
   .hideOnMobile {
     display: none;
   }
@@ -472,4 +582,99 @@ button:hover {
   }
 }
 
+/* ...existing code... */
 
+.api-section {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px 0;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.github-info, .linkedin-info {
+  margin-bottom: 20px;
+}
+
+.github-info h3, .linkedin-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.github-info p, .linkedin-info p {
+  margin: 5px 0;
+}
+
+.github-info a, .linkedin-info a {
+  color: #00FFFF;
+  text-decoration: none;
+}
+
+.github-info a:hover, .linkedin-info a:hover {
+  text-decoration: underline;
+}
+
+.github-repos {
+  display: grid;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.api-card {
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.apple-post-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin: 80px auto;
+  padding: 40px;
+  max-width: 800px;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.apple-post-form {
+  background: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.apple-post-input,
+.apple-post-input-file,
+.apple-quill {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.apple-post-button {
+  background-color: #000000; 
+  color: #ffffff;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.apple-post-button:hover {
+  background-color: #0000009a;
+}
+
+.post-page-container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 80px auto;
+  background-color: #ffffff;
+}
