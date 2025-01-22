@@ -18,7 +18,7 @@ export default function PostPage() {
   useEffect(() => {
     async function fetchData() {
         try {
-            const response = await fetch(`http://localhost:4000/post/${id}`);
+            const response = await fetch(`https://host-5kkf.onrender.com:4000/post/${id}`);
             const data = await response.json();
 
             setTitle(data.title);
@@ -46,7 +46,7 @@ export default function PostPage() {
     formData.set("id", id);
 
 
-    const response = await fetch(`http://localhost:4000/post/`, {
+    const response = await fetch(`https://host-5kkf.onrender.com:4000/post/`, {
       method: "PUT",
       credentials: "include",
       body: formData,

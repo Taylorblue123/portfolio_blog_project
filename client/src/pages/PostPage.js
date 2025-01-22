@@ -24,7 +24,7 @@ export default function PostPage() {
     formData.set("content", content);
     formData.set("cover", cover); // 使用 append 而不是 set
 
-    const response = await fetch("http://localhost:4000/posts", {
+    const response = await fetch("https://host-5kkf.onrender.com:4000/posts", {
       method: "POST",
       credentials: "include",
       body: formData,

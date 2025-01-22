@@ -17,7 +17,7 @@ export default function Header() {
   };
   
   function logout() {
-    fetch("http://localhost:4000/logout", {
+    fetch("https://host-5kkf.onrender.com:4000/logout", {
       credentials: "include",
       method: "POST",
     });
@@ -25,7 +25,7 @@ export default function Header() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:4000/profile", {
+    fetch("https://host-5kkf.onrender.com:4000/profile", {
       credentials: "include",
     }).then(res => {
       res.json().then(userinfo => {
