@@ -9,7 +9,7 @@
   "author": "taylorblue123 @learn from Youtuber Coding with David's tutorial",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",

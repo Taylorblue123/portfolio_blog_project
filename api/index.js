@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const { default: mongoose } = require('mongoose');
 const User = require('./models/User');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs'); // 使用 bcryptjs
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
@@ -14,7 +14,7 @@ const Post = require('./models/Post');
 const salt = bcrypt.genSaltSync(10);
 const secret = 'ascfqeafcaecfqa';
 
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'https://host-5kkf.onrender.com:3000' }));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -42,7 +42,7 @@ app.post('/admin', async (req, res) => {
     return res.status(400).json({ message: "User not found" });
   }
 
-  const passOk = bcrypt.compare(password, userDoc.password, (err, result) => {
+  bcrypt.compare(password, userDoc.password, (err, result) => {
     if (result) {
       //login in
       jwt.sign({ username, id: userDoc._id }, secret, {}, (err, token) => {
