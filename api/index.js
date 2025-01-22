@@ -14,7 +14,7 @@ const Post = require('./models/Post');
 const salt = bcrypt.genSaltSync(10);
 const secret = 'ascfqeafcaecfqa';
 
-app.use(cors({ credentials: true, origin: 'https://host-5kkf.onrender.com:3000' }));
+app.use(cors({ credentials: true, origin: ['http://localhost:3000', 'https://host-5kkf.onrender.com', 'https://wenxuan.onrender.com'] }));
 app.use(express.json());
 app.use(cookieParser());
 
