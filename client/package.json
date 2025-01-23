@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://Taylorblue123.github.io/portfolio_blog_project",
+  "homepage": "https://Taylorblue123.github.io/portfolio_blog_project/client",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
