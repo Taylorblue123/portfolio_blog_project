@@ -11,7 +11,7 @@ export default function AdminPage(){
 
     async function login(e) {
         e.preventDefault();
-        const response = await fetch("https://host-5kkf.onrender.com:4000/admin", {
+        const response = await fetch("https://host-5kkf.onrender.com/admin", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

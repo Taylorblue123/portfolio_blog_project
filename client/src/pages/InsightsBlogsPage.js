@@ -5,7 +5,7 @@ export default function InsightsBlogsPage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("https://host-5kkf.onrender.com:4000/posts", {
+    fetch("https://host-5kkf.onrender.com/posts", {
       method: "GET",
       credentials: "include",
     })

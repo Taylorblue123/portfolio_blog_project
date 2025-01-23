@@ -24,7 +24,7 @@ export default function PostEntryPage() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await fetch(`https://host-5kkf.onrender.com:4000/post/${id}`);
+                const response = await fetch(`https://host-5kkf.onrender.com/post/${id}`);
                 const data = await response.json();
                 setPostInfo(data);
             } catch (err) {
@@ -39,7 +39,7 @@ export default function PostEntryPage() {
     }
 
     async function deletePost() {
-        const response = await fetch('https://host-5kkf.onrender.com:4000/post', {
+        const response = await fetch('https://host-5kkf.onrender.com/post', {
             method: 'DELETE',
             credentials: 'include',
             headers: {
@@ -75,7 +75,7 @@ export default function PostEntryPage() {
                 </div>
             )}
             <div className="image">
-                <img src={"https://host-5kkf.onrender.com:4000/" + postInfo.cover} alt="Blog Post 404" />
+                <img src={"https://host-5kkf.onrender.com/" + postInfo.cover} alt="Blog Post 404" />
             </div>
             
             <div dangerouslySetInnerHTML={{ __html: postInfo.content }}></div>
